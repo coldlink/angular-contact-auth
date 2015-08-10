@@ -1,0 +1,38 @@
+{
+  "name": "angular-contact",
+  "version": "1.0.0",
+  "main": "server.js",
+  "description": "Simple web based contacts management app using the MEAN stack.",
+  "dependencies" : {
+    "express" : "~4.0.0",           
+    "ejs" : "~0.8.5",               
+    "mongoose" : "~3.8.1",          
+    "passport" : "~0.1.17",         
+    "passport-local" : "~0.1.6",    
+    "connect-flash" : "~0.1.1",     
+    "bcrypt-nodejs" : "latest",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.0",
+    "method-override": "~1.0.0",
+    "express-session": "~1.0.0"     
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coldlink/angular-contact.git"
+  },
+  "author": "mahesh-makani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coldlink/angular-contact/issues"
+  },
+  "homepage": "https://github.com/coldlink/angular-contact#readme",
+  "engines": {
+    "node": "0.12.7"
+  }
+}

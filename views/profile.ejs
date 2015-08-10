@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Angular Contact List</title>
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <script src="./angular.min.js"></script>
+    <script src="./javascripts/app.js"></script>
+    <style type="text/css">
+      .row{padding: 5px}
+    </style>
+  </head>
+<body ng-app="angularContactList" ng-controller="MainCtrl">
+  <div class="container"> 
+  <h1 class="text-center">Angular Contact List</h1>
+  <hr>
+  <div>
+    <div class="row">
+        <div class="col-xs-3">Name</div> 
+        <div class="col-xs-3">Email</h5></div> 
+        <div class="col-xs-2">Location</div>
+        <div class="col-xs-3">Phone</div> 
+        <div class="col-xs-1 text-right"></div>
+      </div>
+      <hr>
+      <div>
+      <div class="row" ng-repeat-start="contact in contacts" ng-class-odd="'alt'">
+        <div class="col-xs-3">{{contact.name}}</div> 
+        <div class="col-xs-3">{{contact.email}}</h5></div> 
+        <div class="col-xs-2">{{contact.location}}</div>
+        <div class="col-xs-3">{{contact.primary}}</div> 
+        <div class="col-xs-1 text-right"><button ng-click="showEditRow(contact._id)" class="btn btn-warning btn-sm btn-block"><span>Edit</span></button></div>
+      </div>
+        <div class="row" ng-repeat-end="" ng-show="editorEnabled == contact._id">
+        <form ng-submit="editContact(); showEditRow(tempcontact._id)">
+           <div class="col-xs-3"><input class="form-control input-sm" type="text" ng-model="tempcontact.name"></div>
+           <div class="col-xs-3"><input class="form-control input-sm" type="email" ng-model="tempcontact.email"></div>
+           <div class="col-xs-2"><input class="form-control input-sm" type="text" ng-model="tempcontact.location"></div>
+           <div class="col-xs-3"><input  class="form-control input-sm" type="text" ng-model="tempcontact.primary"></div>
+           <div class="col-xs-1"><button class="btn btn-primary btn-sm btn-block" type="submit">Save</button></div>
+        </form>
+            <div class="col-xs-1 pull-right"><button class="btn btn-danger btn-sm btn-block" ng-click="deleteContact(tempcontact._id)">Delete</button>
+        </div>
+        </div>
+        </div>
+      <hr>
+      <div class="row">
+        <form ng-submit="addContact()">
+           <div class="col-xs-3"><input class="form-control input-sm" type="text" placeholder="Name" ng-model="contact.name"></div>
+           <div class="col-xs-3"><input class="form-control input-sm" type="email" placeholder="Email" ng-model="contact.email"></div>
+           <div class="col-xs-2"><input class="form-control input-sm" type="text" placeholder="Location" ng-model="contact.location"></div>
+           <div class="col-xs-3"><input  class="form-control input-sm" type="text" placeholder="Primary" ng-model="contact.primary"></div>
+           <div class="col-xs-1"><button class="btn btn-primary btn-sm btn-block" type="submit">Add</button></div>
+        </form>
+      </div>
+  </div>
+  <hr>
+</div>
+
+  <!-- rest of template -->
+
+  </body>
+</html>
