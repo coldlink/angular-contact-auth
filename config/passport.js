@@ -1,8 +1,6 @@
 //passport configuration file
-var mongoose = require('mongoose');
 var LocalStrategy = require('passport-local').Strategy;
-//var User = require('./app/models/User'); //get user model
-var User = mongoose.model('User');
+var User = require('./User'); //get user model
 
 module.exports = function(passport)
 {
