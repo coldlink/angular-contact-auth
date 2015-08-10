@@ -12,7 +12,7 @@ var session = require('express-session');
 router.use(express.static(__dirname + "/views"));
 
 //connect to users database
-mongoose.connect('mongodb://angularapp:angularapppass@candidate.6.mongolayer.com:10446,candidate.5.mongolayer.com:10575/users?replicaSet=set-55c8f5868b419260d0000fc7');
+mongoose.connect('mongodb://heroku_58vn8mqq:5l42dvpu4c4u9jvih8ulrma58p@ds031903.mongolab.com:31903/heroku_58vn8mqq/users');
 
 //get passport conficuration
 require('./config/passport')(passport);
