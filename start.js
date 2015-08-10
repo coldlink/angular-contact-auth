@@ -1,3 +1,4 @@
+//get everything needed
 var express = require('express');
 var router = express();
 var mongoose = require('mongoose');
@@ -11,7 +12,7 @@ var session = require('express-session');
 router.use(express.static(__dirname + "/views"));
 
 //connect to users database
-mongoose.connect('mongodb://localhost/users');
+mongoose.connect('mongodb://angularapp:angularapppass@candidate.6.mongolayer.com:10446,candidate.5.mongolayer.com:10575/users?replicaSet=set-55c8f5868b419260d0000fc7');
 
 //get passport conficuration
 require('./config/passport')(passport);

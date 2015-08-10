@@ -25,7 +25,7 @@ module.exports = function(router, passport, Contact)
     router.get('/list', isLoggedIn, function(req, res)
     {
         mongoose.connection.close()
-        mongoose.connect('mongodb://localhost/contacts');
+        mongoose.connect('mongodb://angularapp:angularapppass@candidate.6.mongolayer.com:10446,candidate.5.mongolayer.com:10575/contacts?replicaSet=set-55c8f5868b419260d0000fc7');
         res.render('list.ejs');
     });
 
@@ -47,7 +47,7 @@ module.exports = function(router, passport, Contact)
     router.get('/logout', function(req, res)
     {
         mongoose.connection.close()
-        mongoose.connect('mongodb://localhost/users');
+        mongoose.connect('mongodb://angularapp:angularapppass@candidate.6.mongolayer.com:10446,candidate.5.mongolayer.com:10575/users?replicaSet=set-55c8f5868b419260d0000fc7');
         req.logout();
         res.redirect('/');
     });
@@ -74,10 +74,7 @@ module.exports = function(router, passport, Contact)
     //creating new contact in database
     router.post('/contacts/post', function(req, res)
     {
-        console.log(req.body);
-
         var contact = new Contact(req.body);
-
         contact.save(function(err, contact)
         {
             res.json(contact);
@@ -88,7 +85,6 @@ module.exports = function(router, passport, Contact)
     router.put('/contacts/put/:id', function(req, res)
     {
         var id = req.params.id;
-        console.log(req.body);
         Contact.findByIdAndUpdate(
             id,
             {name: req.body.name, email: req.body.email, location: req.body.location, primary: req.body.primary},
