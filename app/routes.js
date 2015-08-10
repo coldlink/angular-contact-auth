@@ -25,7 +25,7 @@ module.exports = function(router, passport, Contact)
     router.get('/list', isLoggedIn, function(req, res)
     {
         mongoose.connection.close()
-        mongoose.connect('mongodb://heroku_58vn8mqq:5l42dvpu4c4u9jvih8ulrma58p@ds031903.mongolab.com:31903/heroku_58vn8mqq/contacts');
+        mongoose.connect('mongodb://heroku_58vn8mqq:5l42dvpu4c4u9jvih8ulrma58p@ds031903.mongolab.com:31903/heroku_58vn8mqq');
         res.render('list.ejs');
     });
 
@@ -47,7 +47,7 @@ module.exports = function(router, passport, Contact)
     router.get('/logout', function(req, res)
     {
         mongoose.connection.close()
-        mongoose.connect('mongodb://heroku_58vn8mqq:5l42dvpu4c4u9jvih8ulrma58p@ds031903.mongolab.com:31903/heroku_58vn8mqq/users');
+        mongoose.connect('mongodb://heroku_58vn8mqq:5l42dvpu4c4u9jvih8ulrma58p@ds031903.mongolab.com:31903/heroku_58vn8mqq');
         req.logout();
         res.redirect('/');
     });
