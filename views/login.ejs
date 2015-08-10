@@ -2,19 +2,14 @@
 <html>
 <head>
     <title>Angular Contact List - Login</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <script src="./angular.min.js"></script>
-    <script src="./javascripts/app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
-<body ng-app="angularContactList" ng-controller="LoginCtrl">
+<body>
 <div class="container">
-
 <div class="col-sm-6 col-sm-offset-3">
-
-    <h1><span class="fa fa-sign-in"></span> Angular Contact List - Login</h1>
-
-    <!-- LOGIN FORM -->
+    <h1>Angular Contact List - Login</h1>
+    <hr>
     <form action="/login" method="post">
         <div class="form-group">
             <label>Username</label>
@@ -24,26 +19,10 @@
             <label>Password</label>
             <input type="password" class="form-control" name="password">
         </div>
-
-        <button type="submit" class="btn btn-warning btn-lg">Login</button>
+        <button type="submit" class="btn btn-primary">Login</button>
     </form>
-
-    <form role="form" ng-submit="login()">
-	<div class="form-group">
-		<label for="username">Username:</label> <input type="text"
-			class="form-control" id="username" name="username" ng-model="user.username"/>
-	</div>
-	<div class="form-group">
-		<label for="password">Password:</label> <input type="password"
-			class="form-control" id="password" name="password" ng-model="user.password"/>
-	</div>
-	<button type="submit" class="btn btn-primary">Login</button>
-	</form>
-
     <hr>
-
 </div>
-
 </div>
 </body>
 </html>

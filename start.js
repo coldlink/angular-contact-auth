@@ -2,36 +2,43 @@ var express = require('express');
 var router = express();
 var mongoose = require('mongoose');
 var passport = require('passport');
-var flash = require('connect-flash');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+//set public directory
 router.use(express.static(__dirname + "/views"));
-// configuration ===============================================================
-mongoose.connect('mongodb://localhost/users'); // connect to our database
 
-require('./config/passport')(passport); // pass passport for configuration
+//connect to users database
+mongoose.connect('mongodb://localhost/users');
+
+//get passport conficuration
+require('./config/passport')(passport);
+
+//get contact model
 require('./app/models/Contact');
 var Contact = mongoose.model('Contact');
 
-// set up our express application
-router.use(morgan('dev')); // log every request to the console
-router.use(cookieParser()); // read cookies (needed for auth)
-router.use(bodyParser()); // get information from html forms
+ // log request to the console
+router.use(morgan('dev'));
 
-router.set('view engine', 'ejs'); // set up ejs for templating
+// read cookies for auth
+router.use(cookieParser());
+
+// read info from html forms
+router.use(bodyParser());
+
+// use4 ejs for templating
+router.set('view engine', 'ejs');
 
 // required for passport
 router.use(session({ secret: 'netnatives' })); // session secret
 router.use(passport.initialize());
 router.use(passport.session()); // persistent login sessions
-router.use(flash()); // use connect-flash for flash messages stored in session
 
-// routes ======================================================================
-require('./app/routes.js')(router, passport, Contact); // load our routes and pass in our app and fully configured passport
+//routes
+require('./app/routes.js')(router, passport, Contact);
 
-// launch ======================================================================
 router.listen(3000);
 console.log('Server running on port 3000');

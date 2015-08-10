@@ -57,10 +57,3 @@ function($scope, $http){
 		});
 	};
 }]);
-
-app.controller('LoginCtrl',['$scope', '$http', function($scope, $http){
-	$scope.login = function(){
-		console.log($scope.user);
-		$http.post('/login', $scope.user);
-	};
-}]);
