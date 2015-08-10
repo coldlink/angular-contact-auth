@@ -11,7 +11,7 @@ var session = require('express-session');
 //set public directory
 router.use(express.static(__dirname + "/views"));
 
-//connect to users database
+//connect to database
 mongoose.connect('mongodb://heroku_58vn8mqq:5l42dvpu4c4u9jvih8ulrma58p@ds031903.mongolab.com:31903/heroku_58vn8mqq');
 
 //get passport conficuration
