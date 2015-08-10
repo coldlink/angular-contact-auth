@@ -6,6 +6,7 @@ Simple angularjs contact list with authentication ultilising the MEAN stack.
   - MongoDB
   - Express
   - node.js
+  - Bootstrap
   
 ####Node.js modules used:
   - express
@@ -51,16 +52,21 @@ node start
   ```
 http://localhost:3000
   ```
+  - You can create a new user by navigating to
+  ```
+http://localhost:3000/signup
+  ```
 
 ####Project notes:
   - I had never used AngularJS before, but had some experience with JavaScript.
   - AngularJS was straightforward, and easy to learn.
   - Basic non-persistant contact list was implemented first.
+  - Used Bootstrap for stying of the application.
   - Backend developed using MEAN stack (MongoDB, Express, AngularJs, NodeJS)/.
     - Had also never used MongoDB, Express, & NodeJS. I learned how to use all three.
   - Persistant contact list storage developed with MongoDB.
   - All contact list features implemented, Add, Remove, and Edit contact information.
-  - Authentication system was the most difficult part to build.
+  - Authentication system was the most difficult part to build as I had never done anything similar to this using Javascript, and a NoSQL database. Learned alot about the authenication process.
     - Based solution using NodeJs with help from a guide: https://scotch.io/tutorials/easy-node-authentication-setup-and-local
     - Authenication system allows single user login and creation, with encrypted/hashed password using bcrypt. User information is stored in the MondoDB database.
     - All users currently have full access to same contact list when logged in, currently each user does not have individual contact list.
