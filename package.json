@@ -1,5 +1,5 @@
 {
-  "name": "angular-contact",
+  "name": "angular-contact-auth",
   "version": "1.0.0",
   "main": "server.js",
   "description": "Simple web based contacts management app using the MEAN stack.",
