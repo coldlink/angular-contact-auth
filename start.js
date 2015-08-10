@@ -19,7 +19,9 @@ require('./config/passport')(passport);
 
 //get contact model
 require('./app/models/Contact');
+require('./app/models/User');
 var Contact = mongoose.model('Contact');
+
 
  // log request to the console
 router.use(morgan('dev'));
