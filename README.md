@@ -56,6 +56,21 @@ http://localhost:3000
   ```
 http://localhost:3000/signup
   ```
+  
+####Application structure
+    - app
+    ------ models
+    ---------- Contact.js  <!-- Contact model -->
+    ------ routes.js    <!-- routes for the application -->
+    - config
+    ------ passport.js  <!-- configuring passport strategies-->
+    ------ User.js      <!--User model used in passport-->
+    - views
+    ------ login.ejs    <!-- login form/index page -->
+    ------ signup.ejs   <!-- signup form -->
+    ------ list.ejs     <!-- contact list built with angularjs, onlly visible after user logs in -->
+    - package.json      <!-- npm/node packages -->
+    - start.js          <!-- application setup  -->
 
 ####Project notes:
   - I had never used AngularJS before, but had some experience with JavaScript.
